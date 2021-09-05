@@ -1,5 +1,5 @@
 import React from 'react';
-import Error from '../error';
+import Error from '../error/error';
 
 export default class ErrorBoundry extends React.Component {
 
@@ -16,13 +16,15 @@ export default class ErrorBoundry extends React.Component {
     render() {
         const {error} = this.state;
         let result;
-
+        
         if (error) {
             result = <Error /> 
         } else {
             result = this.props.children;
         }
 
-        return {result};
+        return (
+            result
+        )
     }
 }
